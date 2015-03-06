@@ -1,0 +1,20 @@
+<% flash.each do |name, msg| %>
+  <% case name %>
+    <% when "success" %>
+      <% alert_type = "success" %>
+    <% when "info" %>
+      <% alert_type = "info" %>
+    <% when "warning" %>
+      <% alert_type = "warning" %>
+    <% when "error" %>
+      <% alert_type = "danger" %>
+    <% else %>
+      <% alert_type = "info" %>
+  <% end %>
+  <div class='alert alert-<%="#{alert_type}"%> alert-dismissable' role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <%= "<strong>#{name.capitalize}:</strong>  #{msg}".html_safe %>
+  </div>
+<% end %>
