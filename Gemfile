@@ -36,7 +36,8 @@ gem 'spring',        group: :development
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+gem 'pry', group: [:development, :test]
 
 gem 'bootstrap-sass', '~> 3.3.3'
 #gem 'sass-rails', '>= 3.2'
