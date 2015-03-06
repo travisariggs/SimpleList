@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :users
+  resources :users #do
+    #resources :items
+  #end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
