@@ -1,5 +1,6 @@
 <div class="jumbotron text-center">
   <h1>Welcome to Simple List!</h1>
+  <p>Simple list is a simple app that allows you to create a list and access it from any device.  You can make it a to-do list, a grocery list or really anything else that you want.</p>
 </div>
 
 <div class="container">
@@ -30,6 +31,7 @@
   <hr>
 
   <h3 class="text-center">New user?</h3>
-  <button class="btn btn-success center-block">Register</button>
+  <%= button_to "Register", register_path, class: "btn btn-success center-block", method: :get %>
+  <!-- <button class="btn btn-success center-block">Register</button> -->
 
 </div>
