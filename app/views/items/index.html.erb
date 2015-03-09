@@ -1,1 +1,9 @@
-<h3>Your list</h3>
+<div class="container">
+  <h3>Your list</h3>
+  <hr>
+  <ul>
+    <% current_user.items.each do |i| %>
+      <li><%= i.description %></li>
+    <% end %>
+  </ul>
+</div>
