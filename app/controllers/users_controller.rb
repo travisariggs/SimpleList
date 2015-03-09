@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
-	before_action :current_user
+	before_action :require_user, except: [:new, :create]
+	before_action :set_user, except: [:new, :create]
 
   def show
   end
@@ -20,8 +21,21 @@ class UsersController < ApplicationController
   		session[:user_id] = @user.id
   		redirect_to user_path(@user.id)
   	else
-  		flash[:error].now = "Oh snap! Something went wrong with your registration."
+  		flash[:error].now = "Oh snap!  Something went wrong with your registration."
   		render :new
+  	end
+  end
+
+  def edit
+  end
+
+  def update
+  	if @user.update(user_params)
+  		flash[:success] = "Your profile was updated!"
+  		redirect_to user_path(@user)
+  	else
+  		flash[:error].now = "Oh snap!  Something went wrong updating your profile."
+  		render :edit
   	end
   end
 
@@ -29,6 +43,10 @@ class UsersController < ApplicationController
 
   def user_params
   	params.require(:user).permit(:name, :email, :password)
+  end
+
+  def set_user
+  	@user = current_user
   end
 
 end
