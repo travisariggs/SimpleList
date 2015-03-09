@@ -17,5 +17,10 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
+}
+
+.no-bottom-padding {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
 }
