@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get  '/register', to: 'users#new',        as: 'new_user'
   post '/register', to: 'users#create'
 
-  resources :users #do
-    #resources :items
-  #end
+  resources :users do
+    resources :items
+  end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
