@@ -1,9 +1,20 @@
 <div class="container">
   <h3>Your list</h3>
   <hr>
-  <ul>
-    <% current_user.items.each do |i| %>
-      <li><%= i.description %></li>
-    <% end %>
-  </ul>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Due</th>
+      </tr>
+      <% @items.each do |i| %>
+        <tr>
+          <td><%= i.description %></td>
+          <td><%= i.priority %></td>
+          <td><%= i.due_date %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

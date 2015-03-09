@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
 
 	def index
+		# Get items and sort them in descending priority
+		@items = current_user.items.order(priority: :desc)
 	end
 
 	def show
