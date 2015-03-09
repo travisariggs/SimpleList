@@ -1,1 +1,14 @@
-<h1>You're a user!<h1>
+<div class="container">
+
+	<h3>Profile: <%= "#{@current_user.name}" %></h3>
+	<hr>
+
+	<div class="well">
+		<dl class="dl-horizontal no-bottom-padding">
+	    <dt>Username:</dt>
+	    <dd><%= @user.name %></dd>
+	    <dt>Email:</dt>
+	    <dd><%= @user.email %></dd>
+	  </dl>
+	</div>
+</div>
