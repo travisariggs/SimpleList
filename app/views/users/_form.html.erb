@@ -1,0 +1,27 @@
+<div>
+  <%= form_for @user, html: {class: "form-horizontal"} do |u| %>
+    <div class="form-group">
+      <%= u.label :name, "Username", class: "col-sm-2 col-sm-offset-2 control-label" %>
+      <div class="col-sm-6">
+        <%= u.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= u.label :email, "Email", class: "col-sm-2 col-sm-offset-2 control-label" %>
+      <div class="col-sm-6">
+        <%= u.text_field :email, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= u.label :password, "Password", class: "col-sm-2 col-sm-offset-2 control-label" %>
+      <div class="col-sm-6">
+        <%= u.password_field :password, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-10">
+        <%= u.submit (@current_user ? "Update" : "Register"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+ </div>
