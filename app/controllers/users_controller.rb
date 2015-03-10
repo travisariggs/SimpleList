@@ -21,8 +21,8 @@ class UsersController < ApplicationController
   		session[:user_id] = @user.id
   		redirect_to user_path(@user.id)
   	else
-  		flash[:error].now = "Oh snap!  Something went wrong with your registration."
-  		render :new
+  		flash.now[:error] = "Oh snap!  Something went wrong with your registration."
+  		render action: "new"
   	end
   end
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   		flash[:success] = "Your profile was updated!"
   		redirect_to user_path(@user)
   	else
-  		flash[:error].now = "Oh snap!  Something went wrong updating your profile."
+  		flash.now[:error] = "Oh snap!  Something went wrong updating your profile."
   		render :edit
   	end
   end
