@@ -16,11 +16,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
+.navbar-padding {
   padding-top: 80px;
 }
 
 .no-bottom-padding {
 	padding-bottom: 0px;
 	margin-bottom: 0px;
+}
+
+.completed {
+	color: #AAAAAA;
 }
