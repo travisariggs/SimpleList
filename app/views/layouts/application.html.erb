@@ -38,9 +38,14 @@
       </div>
     </div>
   <% end %>
-  <div class="container">
-    <%= render 'layouts/messages' %>
-  </div>
+
+  <% if logged_in? %>
+    <div class="navbar-padding">
+      <div class="container">
+        <%= render 'layouts/messages' %>
+      </div>
+    </div>
+  <% end %>
 
   <%= yield %>
 
