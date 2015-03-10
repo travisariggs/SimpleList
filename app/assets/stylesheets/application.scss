@@ -20,6 +20,11 @@
   padding-top: 80px;
 }
 
+.jumbotron {
+	color: white;
+  background-color: #3389C9;
+}
+
 .no-bottom-padding {
 	padding-bottom: 0px;
 	margin-bottom: 0px;
@@ -27,4 +32,8 @@
 
 .completed {
 	color: #AAAAAA;
+}
+
+.btn {
+	margin-right: 10px;
 }

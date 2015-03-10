@@ -1,11 +1,13 @@
 <div class="jumbotron text-center">
   <h1>Welcome to Simple List!</h1>
-  <p>Simple list is a simple app that allows you to create a list and access it from any device.  You can make it a to-do list, a grocery list or really anything else that you want.</p>
+  <div class="container">
+    <p>Simple list is a simple app that allows you to create a list and access it from any device.  You can make it a to-do list, a grocery list or really anything else that you want.</p>
+  </div>
 </div>
 
 <div class="container">
-  <p class="lead"> Please Log in </p>
-  <hr>
+  <!--   <p class="lead"> Please Log in </p>
+  <hr> -->
   <div>
     <%= form_tag login_path, class: "form-horizontal" do %>
       <div class="form-group">
