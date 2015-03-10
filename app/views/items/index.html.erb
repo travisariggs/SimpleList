@@ -12,7 +12,7 @@
       <% @items.each do |i| %>
         <tr>
           <td>
-            <%= link_to complete_user_item_path(current_user, i), method: :post do %>
+            <%= link_to toggle_complete_user_item_path(current_user, i, completed: :true), method: :post do %>
               <span class="glyphicon glyphicon-unchecked glyphicon-align-right" aria-hidden="true"></span>
             <% end %>
           </td>
@@ -23,4 +23,25 @@
       <% end %>
     </table>
   </div>
+
+  <hr>
+
+  <h5 class="completed">Completed Items...</h5>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <% @completed_items.each do |i| %>
+        <tr>
+          <td>
+            <%= link_to toggle_complete_user_item_path(current_user, i, completed: :false), class: "completed", method: :post do %>
+              <span class="glyphicon glyphicon-check glyphicon-align-right" aria-hidden="true"></span>
+            <% end %>
+          </td>
+          <td class="completed"><%= i.description %></td>
+          <td class="completed"><%= i.priority %></td>
+          <td class="completed"><%= i.due_date %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
 </div>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :items do 
       member do
-        post :complete
+        post :toggle_complete
       end
     end
     #post 'items/:id', to: 'items#complete', as: item_complete_path
