@@ -40,6 +40,10 @@ class ItemsController < ApplicationController
 		end
 	end
 
+	def complete
+		binding.pry
+	end
+
 	private
 
 	def item_params

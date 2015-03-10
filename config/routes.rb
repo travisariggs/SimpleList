@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
 
   resources :users do
-    resources :items
+    resources :items do 
+      member do
+        post :complete
+      end
+    end
+    #post 'items/:id', to: 'items#complete', as: item_complete_path
   end
 
   # You can have the root of your site routed with "root"

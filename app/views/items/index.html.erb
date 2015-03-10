@@ -4,12 +4,18 @@
   <div class="table-responsive">
     <table class="table table-striped sortable">
       <tr>
+        <th></th>
         <th>Description</th>
         <th>Priority</th>
         <th>Due</th>
       </tr>
       <% @items.each do |i| %>
         <tr>
+          <td>
+            <%= link_to complete_user_item_path(current_user, i), method: :post do %>
+              <span class="glyphicon glyphicon-unchecked glyphicon-align-right" aria-hidden="true"></span>
+            <% end %>
+          </td>
           <td><%= i.description %></td>
           <td><%= i.priority %></td>
           <td><%= i.due_date %></td>
