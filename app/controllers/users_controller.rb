@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   		flash[:success] = "You've registered successfully!"
   		# Log the user in
   		session[:user_id] = @user.id
-  		redirect_to user_path(@user.id)
+  		redirect_to user_items_path(@user)
   	else
   		flash.now[:error] = "Oh snap!  Something went wrong with your registration."
   		render action: "new"
