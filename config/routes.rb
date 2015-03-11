@@ -2,6 +2,21 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  root 'welcome#index'
+  post '/login',    to: 'sessions#create'
+  get  '/logout',   to: 'sessions#destroy', as: 'logout'
+  get  '/register', to: 'users#new',        as: 'new_user'
+  post '/register', to: 'users#create'
+
+  resources :users do
+    resources :items do 
+      member do
+        post :toggle_complete
+      end
+    end
+    #post 'items/:id', to: 'items#complete', as: item_complete_path
+  end
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
