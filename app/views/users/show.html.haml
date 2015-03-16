@@ -1,0 +1,11 @@
+.container
+
+	%h3= "Profile: #{@current_user.name}"
+	%hr
+
+	.well
+		%dl.dl-horizontal.no-bottom-padding
+			%dt Username:
+			%dd= @user.name
+			%dt Email:
+			%dd= @user.email
